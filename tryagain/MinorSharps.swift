@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MinorSharps: UIViewController {
 
     
     @IBOutlet var cButton: UIButton!
@@ -63,14 +63,14 @@ class ViewController: UIViewController {
         if(questionsComplete > 11){
             endScore = "Overall: " + String(questionsComplete) + "/" + String(total)
             infoButton.isHidden = true
-            performSegue(withIdentifier: "transition", sender: nil)
+            performSegue(withIdentifier: "transition2", sender: nil)
         }
         
     }
     
     @IBOutlet var prompter: UILabel!
     
-    var keys = ["C Major", "G Major", "D Major", "A Major", "E Major", "B Major", "F# Major", "C# Major"]
+    var keys = ["a minor", "e minor", "b minor", "f# minor", "c# minor", "g# minor", "d# minor", "a# minor"]
     
     let pi = Double.pi
     
@@ -163,6 +163,7 @@ class ViewController: UIViewController {
 
 }
 
+/*
 extension UIView {
     func blink() {
         self.alpha = 0.0;
@@ -189,5 +190,5 @@ extension UIView {
             layer.removeAllAnimations()
             self.alpha = 1
     }
-}
+    */
 

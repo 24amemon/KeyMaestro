@@ -13,6 +13,10 @@
 		1755F9AB29C85855000270EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1755F9A929C85855000270EC /* Main.storyboard */; };
 		1755F9AD29C8585B000270EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1755F9AC29C8585B000270EC /* Assets.xcassets */; };
 		1755F9B029C8585B000270EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1755F9AE29C8585B000270EC /* LaunchScreen.storyboard */; };
+		179A5BA22A16E5EA0040F632 /* DoneExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A5BA12A16E5EA0040F632 /* DoneExercise.swift */; };
+		179A5BA42A16F31B0040F632 /* MinorSharps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A5BA32A16F31B0040F632 /* MinorSharps.swift */; };
+		17A5AB902A167FD10083856F /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A5AB8F2A167FD10083856F /* PopUp.swift */; };
+		17A5AB922A16802B0083856F /* PopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A5AB912A16802B0083856F /* PopUp.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		1755F9AC29C8585B000270EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1755F9AF29C8585B000270EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1755F9B129C8585B000270EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		179A5BA12A16E5EA0040F632 /* DoneExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneExercise.swift; sourceTree = "<group>"; };
+		179A5BA32A16F31B0040F632 /* MinorSharps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorSharps.swift; sourceTree = "<group>"; };
+		17A5AB8F2A167FD10083856F /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		17A5AB912A16802B0083856F /* PopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUp.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +65,13 @@
 			isa = PBXGroup;
 			children = (
 				1755F9A329C85855000270EC /* AppDelegate.swift */,
+				17A5AB912A16802B0083856F /* PopUp.xib */,
+				17A5AB8F2A167FD10083856F /* PopUp.swift */,
 				1755F9A529C85855000270EC /* SceneDelegate.swift */,
 				1755F9A729C85855000270EC /* ViewController.swift */,
 				1755F9A929C85855000270EC /* Main.storyboard */,
+				179A5BA32A16F31B0040F632 /* MinorSharps.swift */,
+				179A5BA12A16E5EA0040F632 /* DoneExercise.swift */,
 				1755F9AC29C8585B000270EC /* Assets.xcassets */,
 				1755F9AE29C8585B000270EC /* LaunchScreen.storyboard */,
 				1755F9B129C8585B000270EC /* Info.plist */,
@@ -127,6 +139,7 @@
 			files = (
 				1755F9B029C8585B000270EC /* LaunchScreen.storyboard in Resources */,
 				1755F9AD29C8585B000270EC /* Assets.xcassets in Resources */,
+				17A5AB922A16802B0083856F /* PopUp.xib in Resources */,
 				1755F9AB29C85855000270EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +153,10 @@
 			files = (
 				1755F9A829C85855000270EC /* ViewController.swift in Sources */,
 				1755F9A429C85855000270EC /* AppDelegate.swift in Sources */,
+				179A5BA42A16F31B0040F632 /* MinorSharps.swift in Sources */,
+				17A5AB902A167FD10083856F /* PopUp.swift in Sources */,
 				1755F9A629C85855000270EC /* SceneDelegate.swift in Sources */,
+				179A5BA22A16E5EA0040F632 /* DoneExercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
