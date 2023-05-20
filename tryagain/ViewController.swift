@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MajorSharp: UIViewController {
 
     
     @IBOutlet var cButton: UIButton!
@@ -139,7 +139,11 @@ class ViewController: UIViewController {
         
         // let initialCirc = UIBezierPath(arcCenter: CGPoint(x: 196, y: 248), radius: 105, startAngle: start, endAngle: start + pi*(questionsComplete-1)/6, clockwise: true)
 
-        let circPath = UIBezierPath(arcCenter: CGPoint(x: 200, y: 289), radius: 105, startAngle: start, endAngle: start + pi*Double(questionsComplete)/6, clockwise: true)
+        //let circPath = UIBezierPath(arcCenter: CGPoint(x: circleOfFifths.frame.midX, y:  circleOfFifths.frame.midY), radius: 105, startAngle: start, endAngle: start + pi*Double(questionsComplete)/6, clockwise: true)
+        
+        //circleOfFifths.frame.maxY
+        
+        let circPath = UIBezierPath(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2-12-92), radius: 99, startAngle: start, endAngle: start + pi*Double(questionsComplete)/6, clockwise: true)
         
         progressCirc.path = circPath.cgPath
         progressCirc.strokeColor = UIColor.purple.cgColor
