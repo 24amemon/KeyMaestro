@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		174B3C4D2A197F49003420A1 /* MinorSharp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B3C4C2A197F49003420A1 /* MinorSharp.swift */; };
 		1755F9A429C85855000270EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1755F9A329C85855000270EC /* AppDelegate.swift */; };
 		1755F9A629C85855000270EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1755F9A529C85855000270EC /* SceneDelegate.swift */; };
 		1755F9A829C85855000270EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1755F9A729C85855000270EC /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		174B3C4C2A197F49003420A1 /* MinorSharp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorSharp.swift; sourceTree = "<group>"; };
 		1755F9A029C85855000270EC /* tryagain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tryagain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1755F9A329C85855000270EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1755F9A529C85855000270EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				17A5AB8F2A167FD10083856F /* PopUp.swift */,
 				1755F9A529C85855000270EC /* SceneDelegate.swift */,
 				1755F9A729C85855000270EC /* ViewController.swift */,
+				174B3C4C2A197F49003420A1 /* MinorSharp.swift */,
 				1755F9A929C85855000270EC /* Main.storyboard */,
 				179A5BA32A16F31B0040F632 /* MinorSharps.swift */,
 				179A5BA12A16E5EA0040F632 /* DoneExercise.swift */,
@@ -157,6 +160,7 @@
 				17A5AB902A167FD10083856F /* PopUp.swift in Sources */,
 				1755F9A629C85855000270EC /* SceneDelegate.swift in Sources */,
 				179A5BA22A16E5EA0040F632 /* DoneExercise.swift in Sources */,
+				174B3C4D2A197F49003420A1 /* MinorSharp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

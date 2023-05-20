@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MajorSharp: UIViewController {
+class MinorSharp: UIViewController {
 
     
     @IBOutlet var cButton: UIButton!
@@ -63,14 +63,14 @@ class MajorSharp: UIViewController {
         if(questionsComplete > 11){
             endScore = "Overall: " + String(questionsComplete) + "/" + String(total)
             infoButton.isHidden = true
-            performSegue(withIdentifier: "transition", sender: nil)
+            performSegue(withIdentifier: "transition2", sender: nil)
         }
         
     }
     
     @IBOutlet var prompter: UILabel!
     
-    var keys = ["C Major", "G Major", "D Major", "A Major", "E Major", "B Major", "F# Major", "C# Major"]
+    var keys = ["a minor", "e minor", "b minor", "f# minor", "c# minor", "g# minor", "d# minor", "a# minor"]
     
     let pi = Double.pi
     
@@ -166,32 +166,3 @@ class MajorSharp: UIViewController {
 
 
 }
-
-extension UIView {
-    func blink() {
-        self.alpha = 0.0;
-        UIView.animate(withDuration: 0.5,
-            delay: 0.0,
-            options: [.curveEaseInOut, .autoreverse],
-            animations: { [weak self] in self?.alpha = 1.0 },
-            completion: { [weak self] _ in self?.alpha = 0.0 })
-        UIView.animate(withDuration: 0.5,
-            delay: 0.0,
-            options: [.curveEaseInOut, .autoreverse],
-            animations: { [weak self] in self?.alpha = 0.0 },
-            completion: { [weak self] _ in self?.alpha = 1.0 })
-    }
-    func blinkPrompt() {
-        self.alpha = 0.0;
-        UIView.animate(withDuration: 0.2,
-            delay: 0.0,
-            options: [.curveEaseInOut, .autoreverse],
-            animations: { [weak self] in self?.alpha = 0.0 },
-            completion: { [weak self] _ in self?.alpha = 1.0 })
-    }
-    func stopBlink() {
-            layer.removeAllAnimations()
-            self.alpha = 1
-    }
-}
-

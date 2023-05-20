@@ -230,7 +230,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GYE-s6-aPA">
-                                <rect key="frame" x="356" y="59" width="21" height="20"/>
+                                <rect key="frame" x="355" y="59" width="21" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.4352940917" green="0.24313727020000001" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
@@ -436,7 +436,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="CWK-OA-fFl">
-                                <rect key="frame" x="346" y="45" width="19" height="20"/>
+                                <rect key="frame" x="345" y="45" width="19" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.4352940917" green="0.24313727020000001" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
@@ -609,7 +609,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="suE-4L-XjT">
-                                <rect key="frame" x="356" y="59" width="21" height="20"/>
+                                <rect key="frame" x="355" y="59" width="21" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.4352940917" green="0.24313727020000001" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
@@ -642,6 +642,7 @@
                         <outlet property="prompter" destination="HkZ-q3-b9u" id="Col-34-TRS"/>
                         <outlet property="rightAnswer" destination="434-9b-ibJ" id="rqe-oY-Rd9"/>
                         <outlet property="wrongAnswer" destination="TIl-tL-mgS" id="bus-RF-zAl"/>
+                        <segue destination="Dnd-XV-e0u" kind="presentation" identifier="transition2" id="K4s-Hh-Sp3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5M0-3m-les" sceneMemberID="firstResponder"/>
@@ -650,7 +651,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KMV-5d-zVO"/>
+        <segue reference="K4s-Hh-Sp3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
