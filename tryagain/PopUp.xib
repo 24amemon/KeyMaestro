@@ -18,9 +18,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ztx-Ai-ehm">
-                    <rect key="frame" x="58" y="160" width="277" height="533"/>
-                    <autoresizingMask key="autoresizingMask"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztx-Ai-ehm">
+                    <rect key="frame" x="58" y="151" width="277" height="550"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap the key signature on the Circle of Fifths that has the same number of accidentals as the prompted key." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7d-hz-LvX">
                             <rect key="frame" x="8" y="61" width="261" height="127"/>
@@ -51,7 +50,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pl-Vv-dKi">
-                            <rect key="frame" x="79" y="447" width="119" height="55"/>
+                            <rect key="frame" x="79" y="464" width="119" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <color key="tintColor" systemColor="labelColor"/>
@@ -70,10 +69,18 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="277" id="kQv-Gc-7cm"/>
+                        <constraint firstAttribute="height" constant="550" id="w1D-hy-kC4"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="0.62699339561855671" green="0.61952654410663888" blue="0.61332920261064094" alpha="0.50228528911564629" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="ztx-Ai-ehm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="C5q-GZ-lje"/>
+                <constraint firstItem="ztx-Ai-ehm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jVj-uF-Ymt"/>
+            </constraints>
             <connections>
                 <outlet property="closeButton" destination="5Pl-Vv-dKi" id="tlD-RM-jwO"/>
             </connections>

@@ -24,6 +24,7 @@ class PopUp: UIView {
         let view = loadXib()
         view.frame = frame
         addSubview(view)
+        
     }
     
     func loadXib() -> UIView {
