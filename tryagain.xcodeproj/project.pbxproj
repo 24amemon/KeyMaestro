@@ -16,6 +16,7 @@
 		1755F9B029C8585B000270EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1755F9AE29C8585B000270EC /* LaunchScreen.storyboard */; };
 		1756A38F2A1986840077FBAE /* MajFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756A38E2A1986840077FBAE /* MajFlat.swift */; };
 		1756A3912A198CEB0077FBAE /* MinFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756A3902A198CEB0077FBAE /* MinFlat.swift */; };
+		1756A3932A1992650077FBAE /* EndlessSharp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756A3922A1992650077FBAE /* EndlessSharp.swift */; };
 		179A5BA22A16E5EA0040F632 /* DoneExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A5BA12A16E5EA0040F632 /* DoneExercise.swift */; };
 		17A5AB902A167FD10083856F /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A5AB8F2A167FD10083856F /* PopUp.swift */; };
 		17A5AB922A16802B0083856F /* PopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A5AB912A16802B0083856F /* PopUp.xib */; };
@@ -33,6 +34,7 @@
 		1755F9B129C8585B000270EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1756A38E2A1986840077FBAE /* MajFlat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajFlat.swift; sourceTree = "<group>"; };
 		1756A3902A198CEB0077FBAE /* MinFlat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinFlat.swift; sourceTree = "<group>"; };
+		1756A3922A1992650077FBAE /* EndlessSharp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessSharp.swift; sourceTree = "<group>"; };
 		179A5BA12A16E5EA0040F632 /* DoneExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneExercise.swift; sourceTree = "<group>"; };
 		17A5AB8F2A167FD10083856F /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		17A5AB912A16802B0083856F /* PopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUp.xib; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				1755F9A729C85855000270EC /* ViewController.swift */,
 				174B3C4C2A197F49003420A1 /* MinorSharp.swift */,
 				1755F9A929C85855000270EC /* Main.storyboard */,
+				1756A3922A1992650077FBAE /* EndlessSharp.swift */,
 				1756A38E2A1986840077FBAE /* MajFlat.swift */,
 				1756A3902A198CEB0077FBAE /* MinFlat.swift */,
 				179A5BA12A16E5EA0040F632 /* DoneExercise.swift */,
@@ -165,6 +168,7 @@
 				179A5BA22A16E5EA0040F632 /* DoneExercise.swift in Sources */,
 				1756A38F2A1986840077FBAE /* MajFlat.swift in Sources */,
 				174B3C4D2A197F49003420A1 /* MinorSharp.swift in Sources */,
+				1756A3932A1992650077FBAE /* EndlessSharp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
