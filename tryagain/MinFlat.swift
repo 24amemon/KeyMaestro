@@ -68,7 +68,7 @@ class MinFlat: UIViewController {
         
     }
     
-    var keys = ["C Major", "F Major", "B♭ Major", "E♭ Major", "A♭ Major", "D♭ Major", "G♭ Major", "C♭ Major"]
+    var keys = ["a minor", "d minor", "g minor", "c minor", "f minor", "b♭ minor", "e♭ minor", "a♭ minor"]
     
     let pi = Double.pi
     
