@@ -15,8 +15,22 @@ class MajFlat: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet var cButton: UIButton!
+    @IBOutlet var gButton: UIButton!
+    @IBOutlet var dButton: UIButton!
+    @IBOutlet var aButton: UIButton!
+    @IBOutlet var eButton: UIButton!
+    @IBOutlet var bButton: UIButton!
+    @IBOutlet var fSharpButton: UIButton!
+    @IBOutlet var cSharpButton: UIButton!
     
-
+    @IBOutlet var circleOfFifths: UIImageView!
+    @IBOutlet var prompter: UILabel!
+    @IBOutlet var infoButton: UIButton!
+    @IBOutlet var correct: UILabel!
+    @IBOutlet var rightAnswer: UIImageView!
+    @IBOutlet var wrongAnswer: UIImageView!
+    
     /*
     // MARK: - Navigation
 

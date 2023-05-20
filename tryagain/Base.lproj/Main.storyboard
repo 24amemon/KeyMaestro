@@ -620,6 +620,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Cyk-uh-XKh"/>
+                    <connections>
+                        <outlet property="aButton" destination="i0L-ku-hZb" id="AoJ-hL-tXu"/>
+                        <outlet property="bButton" destination="oJM-ml-MaN" id="0sq-Ji-fAs"/>
+                        <outlet property="cButton" destination="Jlb-Xq-ySd" id="crU-KV-bg2"/>
+                        <outlet property="cSharpButton" destination="hYQ-cJ-hIc" id="IsA-dQ-Lqw"/>
+                        <outlet property="circleOfFifths" destination="PgI-LP-wzh" id="fJ1-Q1-GkK"/>
+                        <outlet property="correct" destination="YaV-B7-gEa" id="r8C-cz-RNo"/>
+                        <outlet property="dButton" destination="L1f-Ed-5aD" id="jsr-oQ-4Qc"/>
+                        <outlet property="eButton" destination="nQt-aR-pFv" id="28C-A4-mSd"/>
+                        <outlet property="fSharpButton" destination="bzJ-R1-gjJ" id="UpR-t3-aNk"/>
+                        <outlet property="gButton" destination="iZn-Vr-g0b" id="N67-td-b2L"/>
+                        <outlet property="infoButton" destination="Oqp-Qo-2LV" id="Inz-Wo-dR0"/>
+                        <outlet property="prompter" destination="7Pb-iQ-xuX" id="ePY-eY-xhj"/>
+                        <outlet property="rightAnswer" destination="7px-tb-saT" id="oqT-wL-PeO"/>
+                        <outlet property="wrongAnswer" destination="Oa2-TD-BZG" id="bEZ-43-SxI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAv-aF-fCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -627,7 +643,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KMV-5d-zVO"/>
+        <segue reference="K4s-Hh-Sp3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
