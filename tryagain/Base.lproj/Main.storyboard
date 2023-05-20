@@ -38,14 +38,6 @@
                                     <segue destination="gy9-TP-dVE" kind="show" id="gyY-oS-drY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="kP6-Ri-JlC">
-                                <rect key="frame" x="52" y="151" width="287" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
-                                <color key="backgroundColor" red="0.55428592290000001" green="0.31048133680000001" blue="0.3838684349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="INTRO &amp; RESOURCES"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="dVQ-pX-LFZ">
                                 <rect key="frame" x="200" y="464" width="140" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
@@ -63,7 +55,7 @@
                                 <color key="backgroundColor" red="0.55428592290000001" green="0.31048133680000001" blue="0.3838684349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="ENDLESS"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ENDLESS QUIZ"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="vZh-lx-OQl">
                                 <rect key="frame" x="52" y="309" width="138" height="147"/>
@@ -75,6 +67,14 @@
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="majorsharp" id="oQG-kI-ufm"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="rhS-Wm-oE3">
+                                <rect key="frame" x="52" y="154" width="138" height="147"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                <color key="backgroundColor" red="0.55428592290000001" green="0.31048133680000001" blue="0.3838684349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="MAJOR ♯"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Fg-ii-caO">
                                 <rect key="frame" x="52" y="84" width="287" height="57"/>
@@ -89,6 +89,14 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="7bi-xn-zOj">
+                                <rect key="frame" x="201" y="154" width="138" height="147"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                <color key="backgroundColor" red="0.55428592290000001" green="0.31048133680000001" blue="0.3838684349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="MAJOR ♯"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="laj-8a-Hwj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -243,6 +251,17 @@
                                 <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
                                 <connections>
                                     <action selector="PopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="42p-zV-r5P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQH-WK-1ci">
+                                <rect key="frame" x="16" y="59" width="62" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.4352940917" green="0.24313727020000001" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <segue destination="7X5-uE-T09" kind="show" id="F8G-Et-RUo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -461,6 +480,17 @@
                                     <action selector="PopButtonTapped:" destination="nd5-hv-W5K" eventType="touchUpInside" id="tpl-1V-Bd2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73v-mj-8qC">
+                                <rect key="frame" x="16" y="59" width="62" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.4352940917" green="0.24313727020000001" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <segue destination="7X5-uE-T09" kind="show" id="lZJ-In-rvU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4yu-tS-haT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -490,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5M0-3m-les" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1121" y="544"/>
+            <point key="canvasLocation" x="-1121.3740458015266" y="543.66197183098598"/>
         </scene>
         <!--Maj Flat-->
         <scene sceneID="0Mq-Nx-rkd">
@@ -637,6 +667,17 @@
                                 <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
                                 <connections>
                                     <action selector="PopButtonTapped:" destination="gy9-TP-dVE" eventType="touchUpInside" id="AgW-Tv-dYb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kp-oF-8Fm">
+                                <rect key="frame" x="16" y="59" width="62" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.4352940917" green="0.24313727020000001" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <segue destination="7X5-uE-T09" kind="show" id="zjL-EV-U6C"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -824,6 +865,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <segue destination="7X5-uE-T09" kind="show" id="dbc-V2-f4e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="236-Q9-CYt"/>
@@ -858,7 +902,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4yu-PG-jBJ"/>
+        <segue reference="KMV-5d-zVO"/>
+        <segue reference="lZJ-In-rvU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
