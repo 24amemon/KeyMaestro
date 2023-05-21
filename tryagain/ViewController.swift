@@ -31,6 +31,8 @@ class MajorSharp: UIViewController {
     var total = 0
     var endScore = ""
     
+    let truepurple = CGColor(red: 119/255, green: 59/255, blue: 85/255, alpha: 1)
+    
     @IBAction func PopButtonTapped(_ sender: Any) {
         self.commercialPopUp = PopUp(frame: self.view.frame)
         self.commercialPopUp.closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
@@ -47,7 +49,7 @@ class MajorSharp: UIViewController {
             if(questionsComplete < 11){
                 rightAnswer.blink()
             }
-            rightAnswer.tintColor = UIColor.purple
+            rightAnswer.tintColor = UIColor(cgColor: truepurple)
             wrongAnswer.tintColor = UIColor.lightGray
             if(questionsComplete < 11) { newPrompt() }
             print(randomInt, sender.tag)
@@ -146,7 +148,7 @@ class MajorSharp: UIViewController {
         let circPath = UIBezierPath(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2-12-92), radius: 98, startAngle: start, endAngle: start + pi*Double(questionsComplete)/6, clockwise: true)
         
         progressCirc.path = circPath.cgPath
-        progressCirc.strokeColor = UIColor.purple.cgColor
+        progressCirc.strokeColor = truepurple
         progressCirc.fillColor = UIColor.clear.cgColor
         progressCirc.lineWidth = 5
         // progressCirc.strokeEnd = start + pi*questionsComplete/6

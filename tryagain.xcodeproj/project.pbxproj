@@ -351,7 +351,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8Y6XQ7L565;
+				DEVELOPMENT_TEAM = 7ZC5Z6T7H3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tryagain/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
