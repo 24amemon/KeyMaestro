@@ -19,38 +19,45 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztx-Ai-ehm">
-                    <rect key="frame" x="58" y="151" width="277" height="550"/>
+                    <rect key="frame" x="54" y="131" width="285" height="590"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap the key signature on the Circle of Fifths that has the same number of accidentals as the prompted key." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7d-hz-LvX">
-                            <rect key="frame" x="8" y="61" width="261" height="127"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the number of accidentals in the prompted key." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7d-hz-LvX">
+                            <rect key="frame" x="17" y="54" width="250" height="76"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you don't remember one, guess! You'll get the hang of it 🦀" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaP-bI-gzT">
-                            <rect key="frame" x="8" y="150" width="261" height="123"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you don't know or remember a key signature, guess: you'll get the hang of it 🦀" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaP-bI-gzT">
+                            <rect key="frame" x="17" y="116" width="250" height="82"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress will not be saved if you leave the exercise. Key prompts may repeat in succession." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdj-Bx-7dJ">
-                            <rect key="frame" x="8" y="326" width="261" height="123"/>
+                            <rect key="frame" x="17" y="190" width="250" height="83"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="For more information on the Circle of Fifths and key signatures, view the video tab on the home page." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2B-lR-LkV">
-                            <rect key="frame" x="8" y="232" width="261" height="123"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completion of at least one exercise per day is encouraged for learning &amp; retention." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpV-9B-wHf">
+                            <rect key="frame" x="17" y="265" width="250" height="83"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A keyboard is provided below for your convenience:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2B-lR-LkV">
+                            <rect key="frame" x="17" y="339" width="250" height="68"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pl-Vv-dKi">
-                            <rect key="frame" x="79" y="464" width="119" height="55"/>
+                            <rect key="frame" x="83" y="507" width="119" height="56"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <color key="tintColor" systemColor="labelColor"/>
@@ -59,10 +66,14 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
                             </buttonConfiguration>
                         </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="piano" translatesAutoresizingMaskIntoConstraints="NO" id="d4E-jx-ycu">
+                            <rect key="frame" x="21" y="385" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INSTRUCTIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAL-gZ-tCk">
-                            <rect key="frame" x="43" y="28" width="190" height="33"/>
+                            <rect key="frame" x="35" y="22" width="214" height="33"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="27"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="29"/>
                             <nil key="textColor"/>
                             <color key="shadowColor" red="0.55428592290000001" green="0.31048133680000001" blue="0.3838684349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <size key="shadowOffset" width="2" height="1"/>
@@ -70,8 +81,8 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="277" id="kQv-Gc-7cm"/>
-                        <constraint firstAttribute="height" constant="550" id="w1D-hy-kC4"/>
+                        <constraint firstAttribute="width" constant="285" id="kQv-Gc-7cm"/>
+                        <constraint firstAttribute="height" constant="590" id="w1D-hy-kC4"/>
                     </constraints>
                 </view>
             </subviews>
@@ -88,6 +99,7 @@
         </view>
     </objects>
     <resources>
+        <image name="piano" width="665" height="200"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -304,16 +304,6 @@
                                 <rect key="frame" x="72" y="112" width="248" height="213"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UI-eH-Dls">
-                                <rect key="frame" x="143" y="443" width="107" height="69"/>
-                                <color key="backgroundColor" red="0.4352940917" green="0.24313727020000001" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Main Menu"/>
-                                <connections>
-                                    <segue destination="7X5-uE-T09" kind="presentation" id="zva-15-cgs"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STELLAR!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4ji-Fh-OVT">
                                 <rect key="frame" x="133" y="343" width="127" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
@@ -321,20 +311,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UI-eH-Dls">
+                                <rect key="frame" x="142.66666666666666" y="441" width="107.66666666666666" height="34"/>
+                                <color key="backgroundColor" red="0.4352940917" green="0.24313727020000001" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Scj-vB-wUb"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Main Menu"/>
+                                <connections>
+                                    <segue destination="7X5-uE-T09" kind="presentation" id="zva-15-cgs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eQZ-au-iBO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eQZ-au-iBO" firstAttribute="bottom" secondItem="0UI-eH-Dls" secondAttribute="bottom" constant="271" id="BI9-UF-zIN"/>
-                            <constraint firstItem="0UI-eH-Dls" firstAttribute="centerX" secondItem="4ji-Fh-OVT" secondAttribute="centerX" id="ZWS-kZ-UeI"/>
-                            <constraint firstItem="0UI-eH-Dls" firstAttribute="leading" secondItem="eQZ-au-iBO" secondAttribute="leading" constant="143" id="drx-uZ-Phx"/>
-                            <constraint firstItem="0UI-eH-Dls" firstAttribute="top" secondItem="4ji-Fh-OVT" secondAttribute="bottom" constant="65" id="wyT-EP-IdB"/>
+                            <constraint firstItem="0UI-eH-Dls" firstAttribute="top" secondItem="4ji-Fh-OVT" secondAttribute="bottom" constant="63" id="5af-AJ-d6T"/>
+                            <constraint firstItem="0UI-eH-Dls" firstAttribute="centerX" secondItem="Vnj-Zu-31f" secondAttribute="centerX" id="L1Y-f8-7uW"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Naa-oZ-9hS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="537" y="-192"/>
+            <point key="canvasLocation" x="536.64122137404581" y="-192.25352112676057"/>
         </scene>
         <!--Minor Sharp-->
         <scene sceneID="rdV-JO-SMI">
@@ -915,7 +916,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cKg-YY-KNb"/>
-        <segue reference="zjL-EV-U6C"/>
+        <segue reference="zva-15-cgs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
