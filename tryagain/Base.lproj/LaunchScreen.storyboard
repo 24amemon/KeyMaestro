@@ -17,18 +17,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starcrab.png" translatesAutoresizingMaskIntoConstraints="NO" id="0At-on-aLa">
-                                <rect key="frame" x="63.666666666666657" y="284" width="266" height="284"/>
+                                <rect key="frame" x="82" y="323" width="230" height="206"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="284" id="MRO-ZC-ifa"/>
-                                    <constraint firstAttribute="width" constant="266" id="nIa-bw-hYX"/>
+                                    <constraint firstAttribute="width" constant="230" id="eeJ-8y-c56"/>
+                                    <constraint firstAttribute="height" constant="206" id="vNo-9s-hHZ"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSw-Z7-SQg">
+                                <rect key="frame" x="162" y="224" width="70" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="FJh-ia-20k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0At-on-aLa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6oS-BA-CDs"/>
-                            <constraint firstItem="0At-on-aLa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FkW-A2-a3n"/>
+                            <constraint firstItem="0At-on-aLa" firstAttribute="top" secondItem="GSw-Z7-SQg" secondAttribute="bottom" constant="79" id="81y-sr-Yhv"/>
+                            <constraint firstItem="0At-on-aLa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OuN-bG-Yd7"/>
+                            <constraint firstItem="GSw-Z7-SQg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="V9L-9R-cb6"/>
+                            <constraint firstItem="0At-on-aLa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eDt-Nk-7wI"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,7 +49,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="starcrab.png" width="739" height="660"/>
+        <image name="starcrab.png" width="230" height="205.33332824707031"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

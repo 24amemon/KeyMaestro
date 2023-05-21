@@ -64,12 +64,12 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Fg-ii-caO">
-                                        <rect key="frame" x="18" y="8" width="288" height="162"/>
+                                        <rect key="frame" x="20" y="0.0" width="288" height="162"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="KEY MAESTRO">
                                                 <attributes>
-                                                    <font key="NSFont" size="49" name="Futura-Medium"/>
+                                                    <font key="NSFont" size="50" name="Futura-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -77,7 +77,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartcrab" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-M5-fOo">
-                                        <rect key="frame" x="9" y="488" width="306" height="172"/>
+                                        <rect key="frame" x="11" y="498" width="306" height="172"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -919,11 +919,11 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="conductor.png" width="1004" height="751"/>
+        <image name="conductor.png" width="300" height="224.33332824707031"/>
         <image name="hand.thumbsdown.circle.fill" catalog="system" width="128" height="123"/>
         <image name="heartcrab" width="230" height="144"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
-        <image name="starcrab.png" width="739" height="660"/>
+        <image name="starcrab.png" width="230" height="205.33332824707031"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
