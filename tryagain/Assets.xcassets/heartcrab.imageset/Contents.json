@@ -1,16 +1,18 @@
 {
   "images" : [
     {
-      "filename" : "heartcrab.pdf",
-      "idiom" : "universal",
+      "filename" : "heartcrab (1).png",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "filename" : "heartcrab (2).png",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
+      "filename" : "heartcrab (3).png",
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

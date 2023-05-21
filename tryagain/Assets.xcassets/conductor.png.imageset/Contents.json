@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "musiccrab.png",
-      "idiom" : "universal"
+      "filename" : "musiccrab (1).png",
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "musiccrab (2).png",
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "musiccrab (3).png",
+      "idiom" : "iphone",
+      "scale" : "3x"
     }
   ],
   "info" : {

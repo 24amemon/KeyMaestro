@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "starcrab.png",
-      "idiom" : "universal"
+      "filename" : "starcrab (1).png",
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "starcrab (2).png",
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "starcrab (3).png",
+      "idiom" : "iphone",
+      "scale" : "3x"
     }
   ],
   "info" : {

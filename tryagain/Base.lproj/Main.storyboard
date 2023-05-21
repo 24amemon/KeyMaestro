@@ -16,12 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBB-De-gb4">
-                                <rect key="frame" x="34" y="120" width="325" height="658"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBB-De-gb4">
+                                <rect key="frame" x="34" y="91" width="325" height="670"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="kNd-X4-nWa">
-                                        <rect key="frame" x="165" y="178" width="140" height="147"/>
+                                        <rect key="frame" x="166" y="178" width="138" height="147"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                         <color key="backgroundColor" red="0.55428592290000001" green="0.31048133680000001" blue="0.3838684349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,7 +42,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="dVQ-pX-LFZ">
-                                        <rect key="frame" x="166" y="333" width="140" height="147"/>
+                                        <rect key="frame" x="166" y="333" width="138" height="147"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                         <color key="backgroundColor" red="0.55428592290000001" green="0.31048133680000001" blue="0.3838684349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,7 +53,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="vZh-lx-OQl">
-                                        <rect key="frame" x="19" y="178" width="138" height="147"/>
+                                        <rect key="frame" x="20" y="178" width="138" height="147"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         <color key="backgroundColor" red="0.55428592290000001" green="0.31048133680000001" blue="0.3838684349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,29 +63,37 @@
                                             <segue destination="BYZ-38-t0r" kind="show" identifier="majorsharp" id="oQG-kI-ufm"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartcrab" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-M5-fOo">
-                                        <rect key="frame" x="42" y="488" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Fg-ii-caO">
-                                        <rect key="frame" x="19" y="8" width="287" height="57"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Fg-ii-caO">
+                                        <rect key="frame" x="18" y="8" width="288" height="162"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="KEY MAESTRO">
                                                 <attributes>
-                                                    <font key="NSFont" size="30" name="Cochin-Bold"/>
+                                                    <font key="NSFont" size="49" name="Futura-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartcrab" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-M5-fOo">
+                                        <rect key="frame" x="9" y="488" width="306" height="172"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="2fL-kM-crG"/>
+                                    <constraint firstAttribute="height" constant="670" id="GJ9-Ny-uKk"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="laj-8a-Hwj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MBB-De-gb4" firstAttribute="centerY" secondItem="Y6h-Vh-TA7" secondAttribute="centerY" id="LOv-gl-iL2"/>
+                            <constraint firstItem="MBB-De-gb4" firstAttribute="centerX" secondItem="Y6h-Vh-TA7" secondAttribute="centerX" id="qPv-fY-EcI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0wa-jf-il7"/>
                 </viewController>
@@ -914,7 +921,7 @@
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="conductor.png" width="1004" height="751"/>
         <image name="hand.thumbsdown.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="heartcrab" width="433" height="271"/>
+        <image name="heartcrab" width="230" height="144"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
         <image name="starcrab.png" width="739" height="660"/>
         <systemColor name="systemBackgroundColor">
