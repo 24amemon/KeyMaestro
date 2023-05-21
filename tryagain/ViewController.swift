@@ -31,7 +31,7 @@ class MajorSharp: UIViewController {
     var total = 0
     var endScore = ""
     
-    let truepurple = CGColor(red: 119/255, green: 59/255, blue: 85/255, alpha: 1)
+    let truepurple = CGColor(red: 119/255-0.1, green: 59/255-0.1, blue: 85/255-0.1, alpha: 1)
     
     @IBAction func PopButtonTapped(_ sender: Any) {
         self.commercialPopUp = PopUp(frame: self.view.frame)
@@ -145,7 +145,7 @@ class MajorSharp: UIViewController {
         
         //circleOfFifths.frame.maxY
         
-        let circPath = UIBezierPath(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2-12-92), radius: 98, startAngle: start, endAngle: start + pi*Double(questionsComplete)/6, clockwise: true)
+        let circPath = UIBezierPath(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2+7-92), radius: 98, startAngle: start, endAngle: start + pi*Double(questionsComplete)/6, clockwise: true)
         
         progressCirc.path = circPath.cgPath
         progressCirc.strokeColor = truepurple

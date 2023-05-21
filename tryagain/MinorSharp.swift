@@ -25,6 +25,8 @@ class MinorSharp: UIViewController {
     @IBOutlet var circleOfFifths: UIImageView!
     @IBOutlet var rightAnswer: UIImageView!
     
+    let truepurple = CGColor(red: 119/255-0.1, green: 59/255-0.1, blue: 85/255-0.1, alpha: 1)
+    
     var commercialPopUp: PopUp!
     var questionsComplete = 0
     var wrongAnswers = 0
@@ -47,7 +49,7 @@ class MinorSharp: UIViewController {
             if(questionsComplete < 11){
                 rightAnswer.blink()
             }
-            rightAnswer.tintColor = UIColor.purple
+            rightAnswer.tintColor = UIColor(cgColor: truepurple)
             wrongAnswer.tintColor = UIColor.lightGray
             if(questionsComplete < 11) { newPrompt() }
             print(randomInt, sender.tag)
@@ -143,10 +145,10 @@ class MinorSharp: UIViewController {
         
         //circleOfFifths.frame.maxY
         
-        let circPath = UIBezierPath(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2-12-92), radius: 98, startAngle: start, endAngle: start + pi*Double(questionsComplete)/6, clockwise: true)
+        let circPath = UIBezierPath(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2+7-92), radius: 98, startAngle: start, endAngle: start + pi*Double(questionsComplete)/6, clockwise: true)
         
         progressCirc.path = circPath.cgPath
-        progressCirc.strokeColor = UIColor.purple.cgColor
+        progressCirc.strokeColor = truepurple
         progressCirc.fillColor = UIColor.clear.cgColor
         progressCirc.lineWidth = 5
         // progressCirc.strokeEnd = start + pi*questionsComplete/6
