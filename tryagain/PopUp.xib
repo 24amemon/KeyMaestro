@@ -76,7 +76,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" red="0.62699339561855671" green="0.61952654410663888" blue="0.61332920261064094" alpha="0.50228528911564629" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.62699339561855671" green="0.61952654410663888" blue="0.61332920261064094" alpha="0.6969866071428571" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="ztx-Ai-ehm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="C5q-GZ-lje"/>
                 <constraint firstItem="ztx-Ai-ehm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jVj-uF-Ymt"/>
