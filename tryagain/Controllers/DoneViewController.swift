@@ -19,7 +19,15 @@ final class DoneViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Sound.shared.preloadSFX(named: "silly crowd cheer.wav")
+        Sound.shared.preloadSFX(named: "confetti pop.wav")
+        Sound.shared.preloadSFX(named: "select.wav")
         configureUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Sound.shared.stopMusic()
     }
 
     private func configureUI() {
@@ -28,6 +36,8 @@ final class DoneViewController: UIViewController {
         let accuracy = Double(score) / Double(max(attemptsUsed, 1))
         let percent = NumberFormatter.localizedString(from: NSNumber(value: accuracy), number: .percent)
         let isPerfect = (attemptsUsed == score)
+        Sound.shared.playSFX("silly crowd cheer.wav", volume: 0.5)
+        Sound.shared.playSFX("confetti pop.wav", volume: 0.3)
 
         if isPerfect { titleLabel?.text = "STELLAR!" }
         else if accuracy >= 0.80 { titleLabel?.text = "Great job!" }
@@ -43,8 +53,10 @@ final class DoneViewController: UIViewController {
         statsLabel?.textColor = .secondaryLabel
 
         styleButton(mainButton, title: "Main Menu", filled: true)
+        
+        celebrate()
 
-        if isPerfect { celebrateIfPerfect() }
+        //if isPerfect { celebrateIfPerfect() }
     }
 
     private func styleButton(_ button: UIButton?, title: String, filled: Bool) {
@@ -88,16 +100,14 @@ final class DoneViewController: UIViewController {
         }
     }
 
-    private func celebrateIfPerfect() {
-        guard attemptsUsed == score else { return } // perfect = no mistakes
-
-        // transparent and pretinted star
+    private func celebrate() {
+        // pretint for color
         let starYellow = UIColor(red: 217/255, green: 156/255, blue: 56/255, alpha: 1)
         let symbolCfg = UIImage.SymbolConfiguration(pointSize: 22, weight: .regular, scale: .medium)
         guard let baseSymbol = UIImage(systemName: "star.fill", withConfiguration: symbolCfg) else { return }
         let colored = baseSymbol.withTintColor(starYellow, renderingMode: .alwaysOriginal)
 
-        let fmt = UIGraphicsImageRendererFormat.default()
+        let fmt = UIGraphicsImageRendererFormat()
         fmt.opaque = false
         fmt.scale  = UIScreen.main.scale
         let renderer = UIGraphicsImageRenderer(size: colored.size, format: fmt)
@@ -117,16 +127,20 @@ final class DoneViewController: UIViewController {
         let cell = CAEmitterCell()
         cell.contents = starCG
         cell.contentsScale = UIScreen.main.scale
-        cell.birthRate = 20
 
+        // density / timing
+        cell.birthRate = 20
+        cell.lifetime = 2.6
+        cell.lifetimeRange = 0.6
+
+        // motion
         cell.velocity = 330
         cell.velocityRange = 80
         cell.yAcceleration = 320
-        cell.lifetime = 2.6
-        cell.lifetimeRange = 0.6
         cell.emissionLongitude = .pi
         cell.emissionRange = .pi / 12
 
+        // size / spin
         cell.scale = 0.9
         cell.scaleRange = 0.35
         cell.spin = 2
@@ -135,9 +149,12 @@ final class DoneViewController: UIViewController {
         emitter.emitterCells = [cell]
         view.layer.addSublayer(emitter)
 
-        // stop spawning new stars after 1.5s (existing ones finish naturally)
+        // stop spawning after 1.5s, then remove layer
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             emitter.birthRate = 0
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            emitter.removeFromSuperlayer()
         }
 
         UINotificationFeedbackGenerator().notificationOccurred(.success)
@@ -145,6 +162,7 @@ final class DoneViewController: UIViewController {
   
     // MARK: - Actions
     @IBAction func goHomeTapped(_ sender: Any) {
+        Sound.shared.playSFX("select.wav", volume: 0.3)
         // If embedded in a navigation controller, pop to the root menu.
         if let nav = navigationController {
             nav.popToRootViewController(animated: true)

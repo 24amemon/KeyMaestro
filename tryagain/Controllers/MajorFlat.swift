@@ -1,5 +1,5 @@
 //
-//  Major.swift
+//  MajorFlat.swift
 //  tryagain
 //
 //  Created by Aasiya Memon on 5/20/23.

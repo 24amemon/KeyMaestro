@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  MajorSharp.swift
 //  tryagain
 //
-//  Created by Aasiya Memon on 3/20/23.
+//  Created by Aasiya Memon on 3/13/23.
 //
 
 final class MajorSharp: KeyQuizViewController {

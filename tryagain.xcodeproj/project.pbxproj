@@ -24,6 +24,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1770C9D62E940B5800374156 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+		1770C9DA2E946B6600374156 /* Sound */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Sound; sourceTree = "<group>"; };
 		177BA3052E9396A600293C62 /* Controllers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Controllers; sourceTree = "<group>"; };
 		177BA3072E9396C400293C62 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
 		177BA3082E9396DB00293C62 /* UIShared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UIShared; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 				177BA3072E9396C400293C62 /* Model */,
 				177BA3082E9396DB00293C62 /* UIShared */,
 				1755F9AC29C8585B000270EC /* Assets.xcassets */,
+				1770C9DA2E946B6600374156 /* Sound */,
 				1755F9AE29C8585B000270EC /* LaunchScreen.storyboard */,
 				1755F9B129C8585B000270EC /* Info.plist */,
 			);
@@ -89,6 +91,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				1770C9D62E940B5800374156 /* Views */,
+				1770C9DA2E946B6600374156 /* Sound */,
 				177BA3052E9396A600293C62 /* Controllers */,
 				177BA3072E9396C400293C62 /* Model */,
 				177BA3082E9396DB00293C62 /* UIShared */,

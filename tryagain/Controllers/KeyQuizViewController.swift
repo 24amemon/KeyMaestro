@@ -2,7 +2,7 @@
 //  KeyQuizViewController.swift
 //  tryagain
 //
-//  Created by Aasiya Memon on 5/20/23.
+//  Created by Aasiya Memon on 3/20/23.
 //
 
 
@@ -33,6 +33,9 @@ class KeyQuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Sound.shared.preloadSFX(named: "right.wav")
+        Sound.shared.preloadSFX(named: "wrong.wav")
+        Sound.shared.preloadSFX(named: "select.wav")
 
         prompter.text = engine.promptText
         wheelImage.image = UIImage(named: wheelImageName)
@@ -49,6 +52,11 @@ class KeyQuizViewController: UIViewController {
 
         infoButton.isHidden = false
         updateScoreLabel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Sound.shared.stopMusic()
     }
 
     override func viewDidLayoutSubviews() {
@@ -82,6 +90,7 @@ class KeyQuizViewController: UIViewController {
 
             if engine.registerTap(index: tapped) {
                 rightImage.pulse()
+                Sound.shared.playSFX("right.wav", volume: 0.5)
                 rightImage.tintColor = Theme.accent
                 wrongImage.tintColor = .lightGray
                 UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -92,6 +101,7 @@ class KeyQuizViewController: UIViewController {
                 }
             } else {
                 wrongImage.pulse()
+                Sound.shared.playSFX("wrong.wav", volume: 0.5)
                 wrongImage.tintColor = .red
                 rightImage.tintColor = .lightGray
                 UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -110,11 +120,15 @@ class KeyQuizViewController: UIViewController {
         }
     @IBAction func PopButtonTapped(_ sender: Any) {
         commercialPopUp = PopUp(frame: view.frame)
+        Sound.shared.playSFX("select.wav", volume: 0.3)
         commercialPopUp.closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         view.addSubview(commercialPopUp)
     }
 
-    @objc private func closeButtonTapped() { commercialPopUp.removeFromSuperview() }
+    @objc private func closeButtonTapped() {
+        Sound.shared.playSFX("select.wav", volume: 0.3)
+        commercialPopUp.removeFromSuperview()
+    }
 
     private func updateScoreLabel() { correctLabel.text = "Score: \(engine.score)" }
 

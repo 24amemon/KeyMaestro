@@ -1,5 +1,5 @@
 //
-//  MajFlat.swift
+//  MinorFlat.swift
 //  tryagain
 //
 //  Created by Aasiya Memon on 5/20/23.
