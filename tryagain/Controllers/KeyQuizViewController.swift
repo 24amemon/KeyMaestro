@@ -10,7 +10,7 @@ import UIKit
 
 class KeyQuizViewController: UIViewController {
     // Shared outlets (same wiring on every scene)
-    @IBOutlet var noteButtons: [UIButton]!        // connect all 8 in order
+    @IBOutlet var noteButtons: [UIButton]!
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var correctLabel: UILabel!
     @IBOutlet weak var wrongImage: UIImageView!
@@ -20,12 +20,12 @@ class KeyQuizViewController: UIViewController {
 
     // Per-screen config (subclasses override)
     var keys: [String] { [] }
-    var segueIdentifier: String { "transition" }  // subclasses can override (you used 2/3/4)
+    var finishRule: KeyQuizEngine.FinishRule { .attempts(10) }
+    var segueIdentifier: String { "transition" }
     var wheelImageName: String { "conductor.png" }
-    var maxQuestions: Int { 10 }
 
     // State / drawing
-    private lazy var engine = KeyQuizEngine(keys: keys, maxQuestions: maxQuestions)
+    private lazy var engine = KeyQuizEngine(keys: keys, finishRule: finishRule)
     private let progressLayer = CAShapeLayer()
 
     // PopUp (since all scenes use it)
@@ -53,45 +53,58 @@ class KeyQuizViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+
         for b in noteButtons { b.makeCircular() }
         wheelImage.makeCircular()
 
-        let c = CGPoint(x: wheelImage.frame.midX, y: wheelImage.frame.midY)
-        let r = min(wheelImage.bounds.width, wheelImage.bounds.height)/2 + 8
-        let path = UIBezierPath(arcCenter: c, radius: r,
-                                startAngle: -.pi/2, endAngle: 1.5 * .pi, clockwise: true)
+        // Convert the image’s center into the root view’s coordinates
+        let centerInView = wheelImage.superview?.convert(wheelImage.center, to: view) ?? wheelImage.center
+        let radius = min(wheelImage.bounds.width, wheelImage.bounds.height)/2 + 8
+        let start: CGFloat = -.pi/2
+        let path = UIBezierPath(
+            arcCenter: centerInView,
+            radius: radius,
+            startAngle: start,
+            endAngle: start + 2 * .pi,
+            clockwise: true
+        )
+
         progressLayer.path = path.cgPath
-        progressLayer.strokeEnd = CGFloat(engine.score) / CGFloat(engine.maxQuestions)
+        progressLayer.frame = view.bounds
+        progressLayer.zPosition = wheelImage.layer.zPosition + 1  // draw above the image if needed
+
+        progressLayer.strokeEnd = engine.progressFraction
     }
 
     // MARK: Actions (reuse on every scene)
     @IBAction func keyChosen(_ sender: UIButton) {
-        guard let tapped = noteButtons.firstIndex(of: sender) else { return } // outlet order, not tags
+            guard let tapped = noteButtons.firstIndex(of: sender) else { return }
 
-        if engine.registerTap(index: tapped) {
-            rightImage.blink()
-            rightImage.tintColor = Theme.accent
-            wrongImage.tintColor = .lightGray
-            if !engine.isFinished {
-                engine.nextPrompt()
-                prompter.text = engine.promptText
-                prompter.blinkPrompt()
+            if engine.registerTap(index: tapped) {
+                rightImage.blink()
+                rightImage.tintColor = Theme.accent
+                wrongImage.tintColor = .lightGray
+                if !engine.isFinished {
+                    engine.nextPrompt()
+                    prompter.text = engine.promptText
+                    prompter.blinkPrompt()
+                }
+            } else {
+                wrongImage.blink()
+                wrongImage.tintColor = .red
+                rightImage.tintColor = .lightGray
             }
-        } else {
-            wrongImage.blink()
-            wrongImage.tintColor = .red
-            rightImage.tintColor = .lightGray
+
+            updateScoreLabel()
+            animateProgress()
+
+            if engine.isFinished {
+                infoButton.isHidden = true
+                goToDone(score: engine.score,
+                         total: engine.totalAnswered,      // attempts used
+                         target: engine.displayTarget)     // e.g., 12
+            }
         }
-
-        updateScoreLabel()
-        animateProgress()
-
-        if engine.isFinished {
-            infoButton.isHidden = true
-            performSegue(withIdentifier: segueIdentifier, sender: nil)
-        }
-    }
-
     @IBAction func PopButtonTapped(_ sender: Any) {
         commercialPopUp = PopUp(frame: view.frame)
         commercialPopUp.closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
@@ -105,7 +118,28 @@ class KeyQuizViewController: UIViewController {
     private func animateProgress() {
         CATransaction.begin()
         CATransaction.setAnimationDuration(0.35)
-        progressLayer.strokeEnd = CGFloat(engine.score) / CGFloat(engine.maxQuestions)
+        progressLayer.strokeEnd = engine.progressFraction
         CATransaction.commit()
+    }
+}
+
+enum CompletionTransition {
+    case push, present
+}
+
+extension KeyQuizViewController {
+    func goToDone(score: Int, total: Int, target: Int) {
+        let sb = storyboard ?? UIStoryboard(name: "Main", bundle: nil)
+        guard let done = sb.instantiateViewController(withIdentifier: "DoneVC") as? DoneViewController else { return }
+        done.score = score                // correct answers
+        done.attemptsUsed = total         // correct + wrong
+        done.target = target              // e.g., 12 for .corrects(12)
+
+        if let nav = navigationController {
+            nav.pushViewController(done, animated: true)
+        } else {
+            done.modalPresentationStyle = .fullScreen
+            present(done, animated: true)
+        }
     }
 }

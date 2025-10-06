@@ -45,7 +45,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="MINOR ♯"/>
                                         <connections>
-                                            <segue destination="nd5-hv-W5K" kind="show" id="4hl-Pg-eSb"/>
+                                            <segue destination="nd5-hv-W5K" kind="presentation" id="hcc-gS-pjm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="uOM-fh-bIO">
@@ -56,7 +56,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="MAJOR ♭"/>
                                         <connections>
-                                            <segue destination="gy9-TP-dVE" kind="show" id="gyY-oS-drY"/>
+                                            <segue destination="gy9-TP-dVE" kind="presentation" id="dxZ-KF-L94"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="dVQ-pX-LFZ">
@@ -67,7 +67,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="MINOR ♭"/>
                                         <connections>
-                                            <segue destination="ZMi-CE-qPF" kind="show" id="K5U-PE-zhy"/>
+                                            <segue destination="ZMi-CE-qPF" kind="presentation" id="FjI-Sm-v7u"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="vZh-lx-OQl">
@@ -78,7 +78,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="MAJOR ♯"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="majorsharp" id="oQG-kI-ufm"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" id="F3U-se-IRP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZp-8y-o6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1121.3740458015266" y="-192.25352112676057"/>
+            <point key="canvasLocation" x="-2095" y="258"/>
         </scene>
         <!--Major Sharp-->
         <scene sceneID="tne-QT-ifu">
@@ -257,7 +257,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
                                 <connections>
-                                    <segue destination="7X5-uE-T09" kind="show" id="xGM-FN-CSM"/>
+                                    <segue destination="7X5-uE-T09" kind="presentation" id="BXE-Ow-yAC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -270,33 +270,32 @@
                     </view>
                     <navigationItem key="navigationItem" id="cPu-Nu-1mT"/>
                     <connections>
-                        <outlet property="aButton" destination="DfG-eC-ahb" id="SSs-r1-PL9"/>
-                        <outlet property="bButton" destination="wHY-nA-1KD" id="WiB-x9-FcV"/>
-                        <outlet property="cButton" destination="CKc-KG-FFs" id="8cQ-19-Xed"/>
-                        <outlet property="cSharpButton" destination="gSV-Xj-kX4" id="Vfd-VN-E7m"/>
-                        <outlet property="circleOfFifths" destination="bDi-U6-Np8" id="b2W-BS-Y8y"/>
-                        <outlet property="correct" destination="go9-uY-hGH" id="mlq-2D-DPT"/>
-                        <outlet property="dButton" destination="fe4-8D-ysO" id="a9M-p7-9V0"/>
-                        <outlet property="eButton" destination="hHk-Ms-cHI" id="glz-rY-Qwe"/>
-                        <outlet property="fSharpButton" destination="2hL-e1-obx" id="hPh-nk-UTW"/>
-                        <outlet property="gButton" destination="cRp-01-o5R" id="l8t-GR-9dQ"/>
+                        <outlet property="correctLabel" destination="go9-uY-hGH" id="xTI-pH-4et"/>
                         <outlet property="infoButton" destination="BRS-pJ-MCQ" id="FRC-uF-WIu"/>
                         <outlet property="prompter" destination="iaO-VP-BIL" id="17e-Mb-42P"/>
-                        <outlet property="rightAnswer" destination="qjI-OV-IxA" id="B5g-6i-nZG"/>
-                        <outlet property="wrongAnswer" destination="sgU-V6-0fc" id="BhQ-GP-iaw"/>
-                        <segue destination="Dnd-XV-e0u" kind="presentation" identifier="transition" id="KMV-5d-zVO"/>
+                        <outlet property="rightImage" destination="qjI-OV-IxA" id="5z3-aq-1L0"/>
+                        <outlet property="wheelImage" destination="bDi-U6-Np8" id="rpf-p9-Bgc"/>
+                        <outlet property="wrongImage" destination="sgU-V6-0fc" id="VKN-rg-ULh"/>
+                        <outletCollection property="noteButtons" destination="CKc-KG-FFs" collectionClass="NSMutableArray" id="TWd-xj-szR"/>
+                        <outletCollection property="noteButtons" destination="cRp-01-o5R" collectionClass="NSMutableArray" id="2H2-f7-92H"/>
+                        <outletCollection property="noteButtons" destination="fe4-8D-ysO" collectionClass="NSMutableArray" id="leT-uA-bFQ"/>
+                        <outletCollection property="noteButtons" destination="DfG-eC-ahb" collectionClass="NSMutableArray" id="UpP-PJ-egS"/>
+                        <outletCollection property="noteButtons" destination="hHk-Ms-cHI" collectionClass="NSMutableArray" id="Ng4-9y-8mg"/>
+                        <outletCollection property="noteButtons" destination="wHY-nA-1KD" collectionClass="NSMutableArray" id="fRZ-2d-ssx"/>
+                        <outletCollection property="noteButtons" destination="2hL-e1-obx" collectionClass="NSMutableArray" id="Mts-9A-Z1h"/>
+                        <outletCollection property="noteButtons" destination="gSV-Xj-kX4" collectionClass="NSMutableArray" id="I7e-Bo-5GI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306.1068702290076" y="-192.25352112676057"/>
+            <point key="canvasLocation" x="-1245" y="64"/>
         </scene>
-        <!--Done Exercise-->
+        <!--Done View Controller-->
         <scene sceneID="3QA-ID-Gu2">
             <objects>
-                <viewController id="Dnd-XV-e0u" customClass="DoneExercise" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoneVC" id="Dnd-XV-e0u" customClass="DoneViewController" customModule="tryagain" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vnj-Zu-31f">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="starcrab.png" translatesAutoresizingMaskIntoConstraints="NO" id="azr-Ig-ZzZ">
@@ -320,7 +319,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Main Menu"/>
                                 <connections>
-                                    <segue destination="7X5-uE-T09" kind="presentation" id="zva-15-cgs"/>
+                                    <segue destination="7X5-uE-T09" kind="presentation" id="f43-2d-IXX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -331,10 +330,11 @@
                             <constraint firstItem="0UI-eH-Dls" firstAttribute="centerX" secondItem="Vnj-Zu-31f" secondAttribute="centerX" id="L1Y-f8-7uW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="K7J-j1-eiT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Naa-oZ-9hS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536.64122137404581" y="-192.25352112676057"/>
+            <point key="canvasLocation" x="-2854" y="258"/>
         </scene>
         <!--Minor Sharp-->
         <scene sceneID="rdV-JO-SMI">
@@ -480,7 +480,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
                                 <connections>
-                                    <segue destination="7X5-uE-T09" kind="show" id="lZJ-In-rvU"/>
+                                    <segue destination="7X5-uE-T09" kind="presentation" id="qc2-HS-rSy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="suE-4L-XjT">
@@ -503,31 +503,30 @@
                     </view>
                     <navigationItem key="navigationItem" id="gi9-sh-FRY"/>
                     <connections>
-                        <outlet property="aButton" destination="Pwt-uB-d7Z" id="BX2-Nj-DHA"/>
-                        <outlet property="bButton" destination="Jfh-qp-yhx" id="hV8-Aw-ttv"/>
-                        <outlet property="cButton" destination="Ots-hS-HCA" id="CCN-qM-VCY"/>
-                        <outlet property="cSharpButton" destination="MB3-eu-wfl" id="lbf-ml-fGu"/>
-                        <outlet property="circleOfFifths" destination="JtN-z2-Ifu" id="bI7-y7-riE"/>
-                        <outlet property="correct" destination="rRO-Yb-23k" id="LW5-MX-Txk"/>
-                        <outlet property="dButton" destination="Cja-gf-bOr" id="wwQ-ao-Gxs"/>
-                        <outlet property="eButton" destination="87s-Ly-zHv" id="ZYu-9U-bZZ"/>
-                        <outlet property="fSharpButton" destination="yys-jV-zeT" id="5VY-Mw-YjI"/>
-                        <outlet property="gButton" destination="hz4-73-tTA" id="GuQ-Ex-UUd"/>
+                        <outlet property="correctLabel" destination="rRO-Yb-23k" id="B5k-jJ-ogA"/>
                         <outlet property="infoButton" destination="suE-4L-XjT" id="rLf-4D-1bH"/>
                         <outlet property="prompter" destination="HkZ-q3-b9u" id="Col-34-TRS"/>
-                        <outlet property="rightAnswer" destination="434-9b-ibJ" id="rqe-oY-Rd9"/>
-                        <outlet property="wrongAnswer" destination="TIl-tL-mgS" id="bus-RF-zAl"/>
-                        <segue destination="Dnd-XV-e0u" kind="presentation" identifier="transition2" id="K4s-Hh-Sp3"/>
+                        <outlet property="rightImage" destination="434-9b-ibJ" id="IAX-TE-Ftw"/>
+                        <outlet property="wheelImage" destination="JtN-z2-Ifu" id="QAO-ZC-9Sz"/>
+                        <outlet property="wrongImage" destination="TIl-tL-mgS" id="oRe-aM-vzD"/>
+                        <outletCollection property="noteButtons" destination="Ots-hS-HCA" collectionClass="NSMutableArray" id="QwN-Mc-Mne"/>
+                        <outletCollection property="noteButtons" destination="hz4-73-tTA" collectionClass="NSMutableArray" id="SCp-Ml-Hv6"/>
+                        <outletCollection property="noteButtons" destination="Cja-gf-bOr" collectionClass="NSMutableArray" id="LGL-zk-lN0"/>
+                        <outletCollection property="noteButtons" destination="Pwt-uB-d7Z" collectionClass="NSMutableArray" id="1zD-XR-Yql"/>
+                        <outletCollection property="noteButtons" destination="87s-Ly-zHv" collectionClass="NSMutableArray" id="Lkh-fs-N9E"/>
+                        <outletCollection property="noteButtons" destination="Jfh-qp-yhx" collectionClass="NSMutableArray" id="uYb-mc-1LZ"/>
+                        <outletCollection property="noteButtons" destination="yys-jV-zeT" collectionClass="NSMutableArray" id="JFx-92-Cil"/>
+                        <outletCollection property="noteButtons" destination="MB3-eu-wfl" collectionClass="NSMutableArray" id="d7X-xN-CAk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5M0-3m-les" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1121.3740458015266" y="543.66197183098598"/>
+            <point key="canvasLocation" x="-456" y="63"/>
         </scene>
-        <!--Maj Flat-->
+        <!--Major Flat-->
         <scene sceneID="0Mq-Nx-rkd">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="gy9-TP-dVE" customClass="MajFlat" customModule="tryagain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="gy9-TP-dVE" customClass="MajorFlat" customModule="tryagain" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L7n-Y2-bc6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -680,7 +679,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
                                 <connections>
-                                    <segue destination="7X5-uE-T09" kind="show" id="Q0s-Na-XW9"/>
+                                    <segue destination="7X5-uE-T09" kind="presentation" id="HSY-DD-hxr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -693,31 +692,30 @@
                     </view>
                     <navigationItem key="navigationItem" id="Cyk-uh-XKh"/>
                     <connections>
-                        <outlet property="aButton" destination="i0L-ku-hZb" id="AoJ-hL-tXu"/>
-                        <outlet property="bButton" destination="oJM-ml-MaN" id="0sq-Ji-fAs"/>
-                        <outlet property="cButton" destination="Jlb-Xq-ySd" id="crU-KV-bg2"/>
-                        <outlet property="cSharpButton" destination="hYQ-cJ-hIc" id="IsA-dQ-Lqw"/>
-                        <outlet property="circleOfFifths" destination="PgI-LP-wzh" id="fJ1-Q1-GkK"/>
-                        <outlet property="correct" destination="YaV-B7-gEa" id="r8C-cz-RNo"/>
-                        <outlet property="dButton" destination="L1f-Ed-5aD" id="jsr-oQ-4Qc"/>
-                        <outlet property="eButton" destination="nQt-aR-pFv" id="28C-A4-mSd"/>
-                        <outlet property="fSharpButton" destination="bzJ-R1-gjJ" id="UpR-t3-aNk"/>
-                        <outlet property="gButton" destination="iZn-Vr-g0b" id="N67-td-b2L"/>
+                        <outlet property="correctLabel" destination="YaV-B7-gEa" id="rLj-fJ-R7F"/>
                         <outlet property="infoButton" destination="Mc6-24-aYh" id="QFr-p4-lhx"/>
                         <outlet property="prompter" destination="7Pb-iQ-xuX" id="ePY-eY-xhj"/>
-                        <outlet property="rightAnswer" destination="7px-tb-saT" id="oqT-wL-PeO"/>
-                        <outlet property="wrongAnswer" destination="Oa2-TD-BZG" id="bEZ-43-SxI"/>
-                        <segue destination="Dnd-XV-e0u" kind="presentation" identifier="transition3" id="cKg-YY-KNb"/>
+                        <outlet property="rightImage" destination="7px-tb-saT" id="g5h-5m-rCi"/>
+                        <outlet property="wheelImage" destination="PgI-LP-wzh" id="MBx-5Q-x86"/>
+                        <outlet property="wrongImage" destination="Oa2-TD-BZG" id="AXX-h5-4sz"/>
+                        <outletCollection property="noteButtons" destination="Jlb-Xq-ySd" collectionClass="NSMutableArray" id="Mnl-oI-IuK"/>
+                        <outletCollection property="noteButtons" destination="iZn-Vr-g0b" collectionClass="NSMutableArray" id="kbB-fk-QkH"/>
+                        <outletCollection property="noteButtons" destination="L1f-Ed-5aD" collectionClass="NSMutableArray" id="XBT-wS-l2t"/>
+                        <outletCollection property="noteButtons" destination="i0L-ku-hZb" collectionClass="NSMutableArray" id="gnq-o6-8bb"/>
+                        <outletCollection property="noteButtons" destination="nQt-aR-pFv" collectionClass="NSMutableArray" id="kgR-XF-Sn9"/>
+                        <outletCollection property="noteButtons" destination="oJM-ml-MaN" collectionClass="NSMutableArray" id="GG0-4O-p8w"/>
+                        <outletCollection property="noteButtons" destination="bzJ-R1-gjJ" collectionClass="NSMutableArray" id="JxY-kD-LnI"/>
+                        <outletCollection property="noteButtons" destination="hYQ-cJ-hIc" collectionClass="NSMutableArray" id="Nqg-Wq-7IR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAv-aF-fCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306.1068702290076" y="543.66197183098598"/>
+            <point key="canvasLocation" x="-1245" y="756"/>
         </scene>
-        <!--Min Flat-->
+        <!--Minor Flat-->
         <scene sceneID="2Ln-ku-aDh">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="ZMi-CE-qPF" customClass="MinFlat" customModule="tryagain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="ZMi-CE-qPF" customClass="MinorFlat" customModule="tryagain" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lQX-8I-HfV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -870,7 +868,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
                                 <connections>
-                                    <segue destination="7X5-uE-T09" kind="show" id="fFx-29-qbe"/>
+                                    <segue destination="7X5-uE-T09" kind="presentation" id="yej-Md-0Id"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -883,31 +881,29 @@
                     </view>
                     <navigationItem key="navigationItem" id="fng-4a-MOW"/>
                     <connections>
-                        <outlet property="aButton" destination="d3T-la-Zfc" id="JCo-Tx-hRX"/>
-                        <outlet property="bButton" destination="Ewj-gM-lTt" id="gc1-uz-RrF"/>
-                        <outlet property="cButton" destination="Xxs-p4-TzO" id="lwT-fk-m7q"/>
-                        <outlet property="cSharpButton" destination="lSk-rB-3CX" id="gmV-Bh-jGt"/>
-                        <outlet property="circleOfFifths" destination="76k-Mu-KEs" id="uI9-Xb-Rf8"/>
-                        <outlet property="correct" destination="Jbi-We-7DB" id="9eU-BO-iji"/>
-                        <outlet property="dButton" destination="r4D-ug-v8f" id="546-9z-mRl"/>
-                        <outlet property="eButton" destination="Oju-1Q-Blv" id="7W2-Nw-a3P"/>
-                        <outlet property="fSharpButton" destination="CRS-YA-jTc" id="LmC-w6-ibs"/>
-                        <outlet property="gButton" destination="TdH-Tt-MIv" id="nen-GQ-D4i"/>
+                        <outlet property="correctLabel" destination="Jbi-We-7DB" id="C62-JC-SnF"/>
                         <outlet property="infoButton" destination="HcZ-eI-B2G" id="nrp-4u-ZbM"/>
                         <outlet property="prompter" destination="g9M-Bp-Suz" id="v5u-PL-jMO"/>
-                        <outlet property="rightAnswer" destination="BEr-bR-vV7" id="5uZ-7r-HSs"/>
-                        <outlet property="wrongAnswer" destination="K4J-jc-DWK" id="Ys1-4z-pIf"/>
-                        <segue destination="Dnd-XV-e0u" kind="presentation" identifier="transition4" id="4yu-PG-jBJ"/>
+                        <outlet property="rightImage" destination="BEr-bR-vV7" id="AeR-7j-gBI"/>
+                        <outlet property="wheelImage" destination="76k-Mu-KEs" id="hBK-01-Ytl"/>
+                        <outlet property="wrongImage" destination="K4J-jc-DWK" id="p33-7u-GJa"/>
+                        <outletCollection property="noteButtons" destination="Xxs-p4-TzO" collectionClass="NSMutableArray" id="DUZ-Ui-2Fa"/>
+                        <outletCollection property="noteButtons" destination="TdH-Tt-MIv" collectionClass="NSMutableArray" id="PlX-03-qAb"/>
+                        <outletCollection property="noteButtons" destination="r4D-ug-v8f" collectionClass="NSMutableArray" id="oKI-fX-fLO"/>
+                        <outletCollection property="noteButtons" destination="d3T-la-Zfc" collectionClass="NSMutableArray" id="j19-1Y-nGX"/>
+                        <outletCollection property="noteButtons" destination="Oju-1Q-Blv" collectionClass="NSMutableArray" id="unl-zs-AjN"/>
+                        <outletCollection property="noteButtons" destination="Ewj-gM-lTt" collectionClass="NSMutableArray" id="BPn-z3-nlE"/>
+                        <outletCollection property="noteButtons" destination="CRS-YA-jTc" collectionClass="NSMutableArray" id="Spk-n4-zSJ"/>
+                        <outletCollection property="noteButtons" destination="lSk-rB-3CX" collectionClass="NSMutableArray" id="m3d-OW-ZYr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZm-ZD-LdY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="462" y="544"/>
+            <point key="canvasLocation" x="-456" y="756"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="K4s-Hh-Sp3"/>
-        <segue reference="lZJ-In-rvU"/>
+        <segue reference="f43-2d-IXX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>
