@@ -9,191 +9,134 @@ import UIKit
 
 class MajorSharp: UIViewController {
 
-    
-    @IBOutlet var cButton: UIButton!
-    @IBOutlet var gButton: UIButton!
-    @IBOutlet var dButton: UIButton!
-    @IBOutlet var aButton: UIButton!
-    @IBOutlet var eButton: UIButton!
-    @IBOutlet var bButton: UIButton!
-    @IBOutlet var fSharpButton: UIButton!
-    @IBOutlet var cSharpButton: UIButton!
-    
-    @IBOutlet var infoButton: UIButton!
-    @IBOutlet var correct: UILabel!
-    @IBOutlet var wrongAnswer: UIImageView!
-    @IBOutlet var circleOfFifths: UIImageView!
-    @IBOutlet var rightAnswer: UIImageView!
-    
-    var commercialPopUp: PopUp!
-    var questionsComplete = 0
-    var wrongAnswers = 0
-    var total = 0
-    var endScore = ""
-    
-    let truepurple = CGColor(red: 119/255-0.1, green: 59/255-0.1, blue: 85/255-0.1, alpha: 1)
-    
-    @IBAction func PopButtonTapped(_ sender: Any) {
-        self.commercialPopUp = PopUp(frame: self.view.frame)
-        self.commercialPopUp.closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-        self.view.addSubview(commercialPopUp)
-    }
-    
-    @objc func closeButtonTapped(){
-        self.commercialPopUp.removeFromSuperview()
-    }
-    
-    @IBAction func keyChosen(_ sender: UIButton) {
-        if(randomInt == sender.tag){
-            questionsComplete = questionsComplete + 1
-            if(questionsComplete < 11){
-                rightAnswer.blink()
-            }
-            rightAnswer.tintColor = UIColor(cgColor: truepurple)
-            wrongAnswer.tintColor = UIColor.lightGray
-            if(questionsComplete < 11) { newPrompt() }
-            print(randomInt, sender.tag)
-            updateProgress()
-        } else{
-            wrongAnswers = wrongAnswers + 1
-            updateProgress()
-            wrongAnswer.blink()
-            wrongAnswer.tintColor = UIColor.red
-            rightAnswer.tintColor = UIColor.lightGray
+    // MARK: - IBOutlets
+    // Connect *all eight* buttons here in this order to match `keys`:
+    // C, G, D, A, E, B, F#, C#  (or adjust keys to your order)
+    @IBOutlet var noteButtons: [UIButton]!
 
+    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var correctLabel: UILabel!
+    @IBOutlet weak var wrongAnswer: UIImageView!
+    @IBOutlet weak var circleOfFifths: UIImageView!
+    @IBOutlet weak var rightAnswer: UIImageView!
+    @IBOutlet weak var prompter: UILabel!
+
+    // MARK: - PopUp
+    var commercialPopUp: PopUp!
+
+    // MARK: - Game State
+    private let keys = ["C Major","G Major","D Major","A Major","E Major","B Major","F# Major","C# Major"]
+    private let maxQuestions = 10
+    private var score = 0                 // correct answers
+    private var wrongAnswers = 0          // wrong answers
+    private var currentIndex = Int.random(in: 0..<8)
+    private var lastIndex: Int?
+
+    // MARK: - UI / Drawing
+    private let theme = UIColor(red: 119/255, green: 59/255, blue: 85/255, alpha: 1)
+    private let progressLayer = CAShapeLayer()
+    private let ringLineWidth: CGFloat = 5
+
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        infoButton.isHidden = false
+
+        // initial state
+        prompter.text = keys[currentIndex]
+        circleOfFifths.image = UIImage(named:"conductor.png")
+        rightAnswer.tintColor = theme
+        wrongAnswer.tintColor = .lightGray
+
+        // progress ring layer once
+        progressLayer.strokeColor = theme.cgColor
+        progressLayer.fillColor = UIColor.clear.cgColor
+        progressLayer.lineWidth = ringLineWidth
+        progressLayer.lineCap = .round
+        progressLayer.strokeEnd = 0
+        view.layer.addSublayer(progressLayer)
+
+        updateScoreLabel()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Make everything circular after layout
+        for b in noteButtons { b.makeCircular() }
+        circleOfFifths.makeCircular()
+
+        // (Re)compute ring path around the image view’s center
+        let center = CGPoint(x: circleOfFifths.frame.midX, y: circleOfFifths.frame.midY)
+        let radius = min(circleOfFifths.bounds.width, circleOfFifths.bounds.height)/2 + 8
+        let start = -CGFloat.pi/2
+        let end = start + 2*CGFloat.pi
+        let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: start, endAngle: end, clockwise: true)
+        progressLayer.path = path.cgPath
+        // Keep current progress
+        progressLayer.strokeEnd = CGFloat(score) / CGFloat(maxQuestions)
+    }
+
+    // MARK: - IBActions
+    @IBAction func PopButtonTapped(_ sender: Any) {
+        commercialPopUp = PopUp(frame: view.frame)
+        commercialPopUp.closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        view.addSubview(commercialPopUp)
+    }
+
+    @objc private func closeButtonTapped() {
+        commercialPopUp.removeFromSuperview()
+    }
+
+    @IBAction func keyChosen(_ sender: UIButton) {
+        // Get the tapped index using the outlet collection order
+        guard let tappedIndex = noteButtons.firstIndex(of: sender) else { return }
+
+        if tappedIndex == currentIndex {
+            score += 1
+            rightAnswer.blink(duration: 0.5)
+            rightAnswer.tintColor = theme
+            wrongAnswer.tintColor = .lightGray
+            if totalAnswered < maxQuestions { newPrompt() }
+        } else {
+            wrongAnswers += 1
+            wrongAnswer.blink(duration: 0.5)
+            wrongAnswer.tintColor = .red
+            rightAnswer.tintColor = .lightGray
         }
-        if(questionsComplete > 11){
-            endScore = "Overall: " + String(questionsComplete) + "/" + String(total)
+
+        updateScoreLabel()
+        updateProgressRing()
+
+        if totalAnswered >= maxQuestions {
             infoButton.isHidden = true
             performSegue(withIdentifier: "transition", sender: nil)
         }
-        
     }
-    
-    @IBOutlet var prompter: UILabel!
-    
-    var keys = ["C Major", "G Major", "D Major", "A Major", "E Major", "B Major", "F# Major", "C# Major"]
-    
-    let pi = Double.pi
-    
-    var randomInt = Int.random(in: 0..<8)
-    
-    var currentKey = ""
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        circleButtons()
-        
-        infoButton.isHidden = false
-        
-        currentKey = keys[randomInt]
-        
-        prompter.text = currentKey
-        
-        circleOfFifths.image = UIImage(named:"conductor.png")
-    }
-    
-    func circleButtons(){
-        cButton.layer.cornerRadius = 0.5 * cButton.bounds.size.width
-        cButton.clipsToBounds = true
-        
-        gButton.layer.cornerRadius = 0.5 * gButton.bounds.size.width
-        gButton.clipsToBounds = true
-        
-        dButton.layer.cornerRadius = 0.5 * dButton.bounds.size.width
-        dButton.clipsToBounds = true
-        
-        aButton.layer.cornerRadius = 0.5 * aButton.bounds.size.width
-        aButton.clipsToBounds = true
-        
-        eButton.layer.cornerRadius = 0.5 * eButton.bounds.size.width
-        eButton.clipsToBounds = true
-        
-        bButton.layer.cornerRadius = 0.5 * bButton.bounds.size.width
-        bButton.clipsToBounds = true
-        
-        fSharpButton.layer.cornerRadius = 0.5 * fSharpButton.bounds.size.width
-        fSharpButton.clipsToBounds = true
-        
-        cSharpButton.layer.cornerRadius = 0.5 * cSharpButton.bounds.size.width
-        cSharpButton.clipsToBounds = true
-        
-        circleOfFifths.layer.cornerRadius = 0.5 * circleOfFifths.bounds.size.width
-        circleOfFifths.clipsToBounds = true
-    }
-    
-    func newPrompt(){
-        randomInt = Int.random(in: 0..<8)
-        
-        prompter.text = keys[randomInt]
+
+    // MARK: - Helpers
+    private var totalAnswered: Int { score + wrongAnswers }
+
+    private func newPrompt() {
+        // Avoid immediate repeats for a nicer flow
+        repeat { currentIndex = Int.random(in: 0..<keys.count) }
+        while currentIndex == lastIndex
+        lastIndex = currentIndex
+
+        prompter.text = keys[currentIndex]
         prompter.blinkPrompt()
     }
-    
-    func updateProgress(){
-        correct.text = "Score: " +  String(questionsComplete)
-        let progressCirc = CAShapeLayer()
-        
-        total = wrongAnswers + questionsComplete
-        
-        
-        let start = 0 - pi/2
-        
-        // let initialCirc = UIBezierPath(arcCenter: CGPoint(x: 196, y: 248), radius: 105, startAngle: start, endAngle: start + pi*(questionsComplete-1)/6, clockwise: true)
 
-        //let circPath = UIBezierPath(arcCenter: CGPoint(x: circleOfFifths.frame.midX, y:  circleOfFifths.frame.midY), radius: 105, startAngle: start, endAngle: start + pi*Double(questionsComplete)/6, clockwise: true)
-        
-        //circleOfFifths.frame.maxY
-        
-        let circPath = UIBezierPath(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2+7-92), radius: 98, startAngle: start, endAngle: start + pi*Double(questionsComplete)/6, clockwise: true)
-        
-        progressCirc.path = circPath.cgPath
-        progressCirc.strokeColor = truepurple
-        progressCirc.fillColor = UIColor.clear.cgColor
-        progressCirc.lineWidth = 5
-        // progressCirc.strokeEnd = start + pi*questionsComplete/6
-        
-        view.layer.addSublayer(progressCirc)
-        
-        // let basicAnim = CABasicAnimation(keyPath: "strokeEnd")
-        // basicAnim.toValue = start + pi*questionsComplete/6
-        // basicAnim.duration = 2
-        // basicAnim.fillMode = CAMediaTimingFillMode.forwards
-        // basicAnim.isRemovedOnCompletion = false
-        // progressCirc.add(basicAnim, forKey: "animation")
-        
-        
-
+    private func updateScoreLabel() {
+        correctLabel.text = "Score: \(score)"
     }
 
-
-}
-
-extension UIView {
-    func blink() {
-        self.alpha = 0.0;
-        UIView.animate(withDuration: 0.5,
-            delay: 0.0,
-            options: [.curveEaseInOut, .autoreverse],
-            animations: { [weak self] in self?.alpha = 1.0 },
-            completion: { [weak self] _ in self?.alpha = 0.0 })
-        UIView.animate(withDuration: 0.5,
-            delay: 0.0,
-            options: [.curveEaseInOut, .autoreverse],
-            animations: { [weak self] in self?.alpha = 0.0 },
-            completion: { [weak self] _ in self?.alpha = 1.0 })
-    }
-    func blinkPrompt() {
-        self.alpha = 0.0;
-        UIView.animate(withDuration: 0.2,
-            delay: 0.0,
-            options: [.curveEaseInOut, .autoreverse],
-            animations: { [weak self] in self?.alpha = 0.0 },
-            completion: { [weak self] _ in self?.alpha = 1.0 })
-    }
-    func stopBlink() {
-            layer.removeAllAnimations()
-            self.alpha = 1
+    private func updateProgressRing() {
+        // Animate strokeEnd towards new fraction of maxQuestions
+        let progress = CGFloat(score) / CGFloat(maxQuestions)
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(0.35)
+        progressLayer.strokeEnd = progress
+        CATransaction.commit()
     }
 }
-
