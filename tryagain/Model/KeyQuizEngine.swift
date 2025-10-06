@@ -2,7 +2,7 @@
 //  KeyQuizEngine.swift
 //  tryagain
 //
-//  Created by Aasiya Memon on 10/6/25.
+//  Created by Aasiya Memon on 3/20/23.
 //
 
 
@@ -36,7 +36,7 @@ struct KeyQuizEngine {
         }
     }
 
-    // For UI
+    // for UI
     var progressFraction: CGFloat {
         switch finishRule {
         case .attempts(let n): return CGFloat(totalAnswered) / CGFloat(max(n,1))
@@ -44,7 +44,6 @@ struct KeyQuizEngine {
         }
     }
 
-    // Optional: what “total” means for display (“out of”)
     var displayTarget: Int {
         switch finishRule {
         case .attempts(let n): return n

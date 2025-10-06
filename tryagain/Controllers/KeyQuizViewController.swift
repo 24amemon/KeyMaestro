@@ -2,14 +2,13 @@
 //  KeyQuizViewController.swift
 //  tryagain
 //
-//  Created by Aasiya Memon on 10/6/25.
+//  Created by Aasiya Memon on 5/20/23.
 //
 
 
 import UIKit
 
 class KeyQuizViewController: UIViewController {
-    // Shared outlets (same wiring on every scene)
     @IBOutlet var noteButtons: [UIButton]!
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var correctLabel: UILabel!
@@ -27,8 +26,9 @@ class KeyQuizViewController: UIViewController {
     // State / drawing
     private lazy var engine = KeyQuizEngine(keys: keys, finishRule: finishRule)
     private let progressLayer = CAShapeLayer()
+    private let ringOffset: CGFloat = 6
 
-    // PopUp (since all scenes use it)
+    // PopUp
     var commercialPopUp: PopUp!
 
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class KeyQuizViewController: UIViewController {
 
         prompter.text = engine.promptText
         wheelImage.image = UIImage(named: wheelImageName)
-        rightImage.tintColor = Theme.accent
+        rightImage.tintColor = .lightGray
         wrongImage.tintColor = .lightGray
 
         // progress ring
@@ -45,7 +45,7 @@ class KeyQuizViewController: UIViewController {
         progressLayer.lineWidth = 5
         progressLayer.lineCap = .round
         progressLayer.strokeEnd = 0
-        view.layer.addSublayer(progressLayer)
+        view.layer.insertSublayer(progressLayer, below: wheelImage.layer)
 
         infoButton.isHidden = false
         updateScoreLabel()
@@ -59,7 +59,8 @@ class KeyQuizViewController: UIViewController {
 
         // Convert the image’s center into the root view’s coordinates
         let centerInView = wheelImage.superview?.convert(wheelImage.center, to: view) ?? wheelImage.center
-        let radius = min(wheelImage.bounds.width, wheelImage.bounds.height)/2 + 8
+        let base = min(wheelImage.bounds.width, wheelImage.bounds.height) / 2
+        let radius = base + ringOffset
         let start: CGFloat = -.pi/2
         let path = UIBezierPath(
             arcCenter: centerInView,
@@ -71,7 +72,6 @@ class KeyQuizViewController: UIViewController {
 
         progressLayer.path = path.cgPath
         progressLayer.frame = view.bounds
-        progressLayer.zPosition = wheelImage.layer.zPosition + 1  // draw above the image if needed
 
         progressLayer.strokeEnd = engine.progressFraction
     }
@@ -81,18 +81,21 @@ class KeyQuizViewController: UIViewController {
             guard let tapped = noteButtons.firstIndex(of: sender) else { return }
 
             if engine.registerTap(index: tapped) {
-                rightImage.blink()
+                rightImage.pulse()
                 rightImage.tintColor = Theme.accent
                 wrongImage.tintColor = .lightGray
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                UINotificationFeedbackGenerator().notificationOccurred(.success)
                 if !engine.isFinished {
                     engine.nextPrompt()
-                    prompter.text = engine.promptText
-                    prompter.blinkPrompt()
+                    prompter.setTextWithSlide(engine.promptText)
                 }
             } else {
-                wrongImage.blink()
+                wrongImage.pulse()
                 wrongImage.tintColor = .red
                 rightImage.tintColor = .lightGray
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
             }
 
             updateScoreLabel()
